@@ -1,0 +1,139 @@
+@import './styles/variables.css';
+@import './styles/glitch.css';
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
+  font-family: var(--font-tech);
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+  cursor: default;
+}
+
+/* Custom Cyber Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+  border-left: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--neon-cyan), var(--neon-lime));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--neon-pink), var(--neon-orange));
+}
+
+/* Selection Color */
+::selection {
+  background-color: var(--neon-cyan);
+  color: #000;
+}
+
+/* Typography Defaults */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  color: var(--text-highlight);
+  letter-spacing: -0.02em;
+}
+
+code, pre {
+  font-family: var(--font-mono);
+}
+
+/* Global Container */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Badge Utility */
+.cyber-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-secondary);
+}
+
+.cyber-badge-lime {
+  border-color: rgba(57, 255, 20, 0.3);
+  color: var(--neon-lime);
+  background: rgba(57, 255, 20, 0.07);
+}
+
+.cyber-badge-cyan {
+  border-color: rgba(0, 240, 255, 0.3);
+  color: var(--neon-cyan);
+  background: rgba(0, 240, 255, 0.07);
+}
+
+.cyber-badge-pink {
+  border-color: rgba(255, 0, 127, 0.3);
+  color: var(--neon-pink);
+  background: rgba(255, 0, 127, 0.07);
+}
+
+.cyber-badge-orange {
+  border-color: rgba(255, 85, 0, 0.3);
+  color: var(--neon-orange);
+  background: rgba(255, 85, 0, 0.07);
+}
+
+/* Section Header Base */
+.section-header {
+  text-align: center;
+  margin-bottom: 48px;
+  position: relative;
+}
+
+.section-title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  text-transform: uppercase;
+  line-height: 1.1;
+  margin-top: 12px;
+  background: linear-gradient(135deg, #ffffff 40%, var(--neon-cyan) 80%, var(--neon-lime) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.section-subtitle {
+  font-family: var(--font-mono);
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  max-width: 600px;
+  margin: 12px auto 0;
+  line-height: 1.6;
+}
